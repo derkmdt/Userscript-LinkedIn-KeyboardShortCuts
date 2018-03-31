@@ -8,6 +8,7 @@
 // @require      https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js
 // @run-at       document-end
 // @match        http*://www.linkedin.com/*feed*
+// @updateURL    https://github.com/derkmdt/Userscript-LinkedIn-KeyboardShortCuts/raw/master/LinkedIn-KeyboardShortCuts.user.js
 // ==/UserScript==
 
 /* jshint ignore:start */
@@ -50,6 +51,6 @@ var inline_src = (<><![CDATA[
 
     /* jshint ignore:start */
 ]]></>).toString();
-                  var c = Babel.transform(inline_src, { presets: [ "es2015", "es2016" ] });
+var c = Babel.transform(inline_src, { presets: [ "es2015", "es2016" ] });
 eval(c.code);
 /* jshint ignore:end */
