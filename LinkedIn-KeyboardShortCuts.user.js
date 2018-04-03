@@ -7,10 +7,9 @@
 // @require      https://cdnjs.cloudflare.com/ajax/libs/babel-polyfill/6.16.0/polyfill.js
 // @require      https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js
 // @run-at       document-end
-// @noframes
 // @include      https://www.linkedin.com/*
 // @updateURL    https://github.com/derkmdt/Userscript-LinkedIn-KeyboardShortCuts/raw/master/LinkedIn-KeyboardShortCuts.user.js
-
+// @noframes
 // ==/UserScript==
 
 /* jshint ignore:start */
