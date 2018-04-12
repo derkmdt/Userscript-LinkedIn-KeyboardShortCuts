@@ -62,7 +62,7 @@ var inline_src = (<><![CDATA[
 
   function scrollToItem() {
     if(jQuery(jQuery('div[data-id^="urn:li:activity:"]'))[x]) {
-      const offsetItem = jQuery(jQuery('div[data-id^="urn:li:activity:"]'))[x].offsetTop;
+      const offsetItem = jQuery(jQuery('div[data-id^="urn:li:activity:"]'))[x].offsetTop - 5;
       window.scrollTo(0, offsetItem);
     }
   }
