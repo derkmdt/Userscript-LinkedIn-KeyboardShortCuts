@@ -1,6 +1,6 @@
 // ==UserScript==
 // @name         LinkedIn KeysBoardShortCuts
-// @version      0.1
+// @version      0.2
 // @description  You can use J and K keys to skip through the LinkedIn feed items
 // @author       Derk Braakman
 // @require      https://cdnjs.cloudflare.com/ajax/libs/babel-standalone/6.18.2/babel.js
