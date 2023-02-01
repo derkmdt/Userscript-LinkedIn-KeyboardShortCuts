@@ -1,11 +1,10 @@
 // ==UserScript==
 // @name         LinkedIn KeysBoardShortCuts
-// @version      0.2
+// @version      0.3
 // @description  You can use J and K keys to skip through the LinkedIn feed items
 // @author       Derk Braakman
 // @require      https://cdnjs.cloudflare.com/ajax/libs/babel-standalone/6.18.2/babel.js
 // @require      https://cdnjs.cloudflare.com/ajax/libs/babel-polyfill/6.16.0/polyfill.js
-// @require      https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js
 // @run-at       document-end
 // @include      https://www.linkedin.com/*
 // @updateURL    https://github.com/derkmdt/Userscript-LinkedIn-KeyboardShortCuts/raw/master/LinkedIn-KeyboardShortCuts.user.js
@@ -17,7 +16,7 @@ var inline_src = (<><![CDATA[
 /* jshint ignore:end */
 /* jshint esnext: false */
 /* jshint esversion: 6 */
-((oldHistoryPushState, jQuery) => {
+((oldHistoryPushState) => {
   let x=0;
 
   // LinkedIn uses JS (pushState) to navigate with menuitems, so checking usage with this function
@@ -42,10 +41,9 @@ var inline_src = (<><![CDATA[
     const key = ev.keyCode ? ev.keyCode : ev.which;
     const elTarget = ev.target ? ev.target : ev.srcElement;
     const elType = elTarget.tagName;
-    const elRole = jQuery(elTarget).filter('[role=textbox]').length;
 
     // when type textinput/box/area don't use the J/K functionlity
-    if (elType === 'TEXTAREA' || elType === 'INPUT' || elRole) return;
+    if (elType === 'TEXTAREA' || elType === 'INPUT') return;
 
     if(key === 74) {
       if(x >= 0) {
@@ -60,13 +58,13 @@ var inline_src = (<><![CDATA[
     }
   };
 
-  function scrollToItem() {
-    if(jQuery(jQuery('div[data-id^="urn:li:activity:"]'))[x]) {
-      const offsetItem = jQuery(jQuery('div[data-id^="urn:li:activity:"]'))[x].offsetParent.offsetTop - 5;
+  function scrollToItem(x) {
+    if(document.querySelectorAll('div[data-id^="urn:li:activity:"]')[x]) {
+      const offsetItem = document.querySelectorAll('div[data-id^="urn:li:activity:"]')[x].offsetTop - 55;
       window.scrollTo(0, offsetItem);
     }
   }
-})(window.history.pushState, jQuery);
+})(window.history.pushState);
 
 /* jshint ignore:start */
 ]]></>).toString();
